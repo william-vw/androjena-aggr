@@ -1,0 +1,8 @@
+[R1: 
+	(?p rdf:type :Patient)
+	(?p :gender :female)
+	sumAllLinked(?p :ateFood :calories ?calories)
+	greaterThan(?calories 2000)
+-> 
+	(?p :warning "over calorie limit")
+]

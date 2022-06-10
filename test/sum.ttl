@@ -1,0 +1,14 @@
+@prefix : <http://wvw.ca/ns/sum.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:patientA a :Patient ; :gender :female ; 
+	:ateFood [
+		rdfs:label "apple" ;
+		:calories 12
+	] , [
+		rdfs:label "pizza" ;
+		:calories 1500
+	] , [
+		rdfs:label "pizza" ;
+		:calories 800
+	] .
