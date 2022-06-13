@@ -1,0 +1,21 @@
+[R1: 
+	(?p rdf:type :Patient)
+	(?p :ate :apple)
+-> 
+	(:apple :sugar 50)
+]
+
+[R2: 
+	(?p rdf:type :Patient)
+	(?p :ate :banana)
+-> 
+	(:banana :sugar 70)
+]
+
+
+[R1: 
+	(?p rdf:type :Patient)
+	sumAllLinked(?p :ate :sugar ?totalSugar)
+-> 
+	(?p :totalSugar ?totalSugar)
+]

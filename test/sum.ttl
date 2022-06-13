@@ -10,5 +10,5 @@
 		:calories 1500
 	] , [
 		rdfs:label "pizza" ;
-		:calories 800
+		:calories 500
 	] .

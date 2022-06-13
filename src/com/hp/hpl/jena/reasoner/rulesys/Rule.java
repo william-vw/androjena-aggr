@@ -133,7 +133,8 @@ public class Rule implements ClauseEntry {
         this.name = name;
         this.head = head;
         this.body = body;
-        this.isMonotonic = allMonotonic(head);
+        // (non-monotonic rule bodies)
+        this.isMonotonic = allMonotonic(head) && allMonotonic(body);
     }
     
     // Compute the monotonicity flag

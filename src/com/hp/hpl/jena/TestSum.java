@@ -31,8 +31,8 @@ public class TestSum {
 	}
 
 	public static void main(String[] args) throws Exception {
-		String dataPath = "test/sum.ttl";
-		String rulePath = "test/sum.jena";
+		String dataPath = "test/sum2.ttl";
+		String rulePath = "test/sum2.jena";
 
 		AssetManager assetMan = new AssetManager();
 
@@ -52,13 +52,14 @@ public class TestSum {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(assetMan.open(rulePath)));
 		rules.addAll(Rule.parseRules(Rule.rulesParserFromReader(br)));
+
 		// - create inf model
 
 		GenericRuleReasoner reasoner = new GenericRuleReasoner(rules);
 		reasoner.setMode(GenericRuleReasoner.FORWARD);
 
 		InfModel infModel = ModelFactory.createInfModel(reasoner, m);
-		
+
 		System.out.println("- deductions model:");
 		infModel.getDeductionsModel().write(System.out, "TURTLE");
 

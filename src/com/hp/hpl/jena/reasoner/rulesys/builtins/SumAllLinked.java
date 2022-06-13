@@ -38,6 +38,10 @@ public class SumAllLinked extends CollectAll {
 
 		collectAll(root, properties, context);
 
+		// (non-monotonic rule bodies)
+		if (nodes.isEmpty())
+			return false;
+		
 		double sum = 0;
 		for (Node n : nodes) {
 			Object nr = n.getLiteralValue();
@@ -57,6 +61,6 @@ public class SumAllLinked extends CollectAll {
 
 	@Override
 	public boolean isMonotonic() {
-		return true;
+		return false;
 	}
 }
